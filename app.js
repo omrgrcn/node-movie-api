@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/movie', movie);
+app.use('/api/movies', movie);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -37,7 +37,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  //res.render('error');
+  res.json({ error: { message: err.message, code: err.code } });
 });
 
 module.exports = app;
