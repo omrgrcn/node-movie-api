@@ -5,7 +5,7 @@ const router = express.Router();
 // Directors
 const Director = require('../models/Director');
 
-router.get('/', (req, res, next) => { // tum directorleri getirir
+router.get('/', (req, res, next) => {
   const promise = Director.aggregate([
     {
       $lookup: {
@@ -110,6 +110,24 @@ router.post('/', (req,res,next) => {
   promise.then((data) => {
     res.json(data);
   }).catch((err) => {
+    res.json(err);
+  });
+});
+
+router.put('/:director_id', (req,res,next) => {
+  const promise = Director.findByIdAndUpdate(
+    req.params.director_id, 
+    req.body, 
+    { new: true }
+  );
+  
+  promise.then((director) => {
+    if(!director)
+      next({ message: 'The movie was not found.', code: 1 });
+
+    res.json(director);
+  }).catch((err) => {
+    console.log('error log')
     res.json(err);
   });
 });
