@@ -12,7 +12,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         minlength: 2,
-        maxlength: 20
+        maxlength: 60
     }
 });
 
