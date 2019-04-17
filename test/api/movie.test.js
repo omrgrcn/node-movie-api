@@ -63,7 +63,7 @@ describe('/api/movies tests', () => {
         });
     });
 
-    describe('/GET/:director_id movie', () => {
+    describe('/GET/:movie_id movie', () => {
         it('should be GET a movie by the given id', (done) => {
             chai.request(server)
                 .get('/api/movies/'+ movieId)
@@ -82,7 +82,7 @@ describe('/api/movies tests', () => {
         });
     });
 
-    describe('/PUT movie', () => {
+    describe('/PUT/:movie_id movie', () => {
         it('it should PUT a movie by the given id', (done) => {
             const movie = {
                 title: 'Hayvan Mezarlığı',
@@ -111,7 +111,7 @@ describe('/api/movies tests', () => {
         });
     });
 
-    describe('/DELETE movie', () => {
+    describe('/DELETE/:movie_id movie', () => {
         it('it should DELETE a movie by the given id', (done) => {
             chai.request(server)
                 .delete('/api/movies/'+ movieId)
