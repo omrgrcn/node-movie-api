@@ -14,7 +14,7 @@ describe('/api/movies tests', () => {
             .send({ username: 'sabri', password: 'obrx' })
             .end((err,res) => {
                 token = res.body.token;
-                console.log(token);
+                //console.log(token);
                 done();
             });
     });

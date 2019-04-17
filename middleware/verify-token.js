@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
                     message: 'Failed to authenticate token.'
                 })
             } else {
-                console.log('giris basarili - decoded :', decoded);
+                //console.log('giris basarili - decoded :', decoded);
                 req.decode = decoded;
                 next();
             }

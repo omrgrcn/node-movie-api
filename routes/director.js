@@ -90,6 +90,7 @@ router.get('/:director_id', (req, res, next) => { // sadece belirtilen id deki d
         _id: '$_id._id',
         name: '$_id.name',
         surname: '$_id.surname',
+        bio: '$_id.bio',
         movies: '$movies'
       } 
     }
