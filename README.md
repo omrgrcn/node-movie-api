@@ -1,5 +1,9 @@
+[![Build status](https://api.travis-ci.org/omrgrcn/node-movie-api.svg)](https://api.travis-ci.org/omrgrcn/node-movie-api.svg)
+
 # node-movie-api
 Node.JS - Movie API
+
+![nodejs movie api](https://nodeblog.files.wordpress.com/2011/07/nodejs.png)
 
 # Movies
 
@@ -31,3 +35,8 @@ Node.JS - Movie API
 | /register | `POST` | { username: 'foo', password:'1234' } | Create a new user. |
 | /authenticate | `POST` | { username: 'foo', password:'1234' } | Generate a token. |
 
+
+# Demo
+[Live demo on Heroku](https://node-first-movie-api.herokuapp.com/)
+
+enjoy!
